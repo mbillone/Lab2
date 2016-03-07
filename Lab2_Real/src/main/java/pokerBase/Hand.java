@@ -360,13 +360,13 @@ public class Hand {
 
 	public static boolean isHandHighCard(Hand h, HandScore hs) {
 		hs.setHandStrength(eHandStrength.HighCard.getHandStrength());
-		hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr());
+		hs.setHiHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr());
 		hs.setLoHand(0);
 		ArrayList<Card> kickers = new ArrayList<Card>();
-		kickers.add(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()));
 		kickers.add(h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()));
 		kickers.add(h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()));
 		kickers.add(h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()));
+		kickers.add(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()));
 		hs.setKickers(kickers);
 		return true;
 	}
