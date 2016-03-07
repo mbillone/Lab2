@@ -287,6 +287,19 @@ public class Hand {
 				hs.setKickers(kickers);
 			}
 		}
+		else if (h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank() == 
+				h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteRank()){
+			if (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank() == 
+					h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank()){
+				bHandCheck = true;
+				hs.setHandStrength(eHandStrength.TwoPair.getHandStrength());
+				hs.setHiHand(h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr());
+				hs.setLoHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr());
+				ArrayList<Card> kickers = new ArrayList<Card>();
+				kickers.add(h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()));			
+				hs.setKickers(kickers);
+			}
+		}
 		return bHandCheck;
 		
 	}
